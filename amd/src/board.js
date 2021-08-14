@@ -159,8 +159,11 @@ export default function(board, options) {
         default_column_heading: '',
         post_button_text: '',
         cancel_button_text: '',
+        remove_note_title: '',
         remove_note_text: '',
+        remove_column_title: '',
         remove_column_text: '',
+        note_changed_title: '',
         note_changed_text: '',
         note_deleted_text: '',
         rate_note_text: '',
@@ -547,8 +550,8 @@ export default function(board, options) {
      */
     var deleteNote = function(ident) {
         Notification.confirm(
-            strings.remove_note_text.split("\n")[1], // Are you sure?
-            strings.remove_note_text.split("\n")[0], // This will effect others.
+            strings.remove_note_title,
+            strings.remove_note_text,
             strings.Ok,
             strings.Cancel,
             function() {
@@ -1157,8 +1160,8 @@ export default function(board, options) {
             var removeElement = $('<div class="mod_board_remove fa fa-remove delete_column" role="button" tabindex="0"></div>');
             handleAction(removeElement, function() {
                 Notification.confirm(
-                    strings.remove_column_text.split(". ")[1], // Are you sure?
-                    strings.remove_column_text.split(". ")[0], // This will effect others.
+                    strings.remove_column_title, // Are you sure?
+                    strings.remove_column_text, // This will effect others.
                     strings.Ok,
                     strings.Cancel,
                     function() {
@@ -1318,8 +1321,8 @@ export default function(board, options) {
 
                         if (editingNote == data.id) {
                             Notification.confirm(
-                                strings.note_changed_text.split("\n")[0], // Confirm.
-                                strings.note_changed_text.split("\n")[1], // Are you sure?
+                                strings.note_changed_title,
+                                strings.note_changed_text,
                                 strings.Ok,
                                 strings.Cancel,
                                 function(note, heading, data) {
