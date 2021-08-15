@@ -122,7 +122,7 @@ class mod_board_external extends external_api {
             new external_single_structure(
                 array(
                     'id' => new external_value(PARAM_INT, 'column id'),
-                    'name' => new external_value(PARAM_TEXT, 'column name'),
+                    'name' => new external_value(PARAM_RAW, 'column name'),
                     'locked' => new external_value(PARAM_BOOL, 'column locked'),
                     'notes' => new external_multiple_structure(
                         new external_single_structure(
@@ -152,7 +152,7 @@ class mod_board_external extends external_api {
     public static function add_column_parameters(): external_function_parameters {
         return new external_function_parameters([
             'boardid' => new external_value(PARAM_INT, 'The board id', VALUE_REQUIRED),
-            'name' => new external_value(PARAM_TEXT, 'The column name', VALUE_REQUIRED)
+            'name' => new external_value(PARAM_RAW, 'The column name', VALUE_REQUIRED)
         ]);
     }
 
@@ -194,7 +194,7 @@ class mod_board_external extends external_api {
     public static function update_column_parameters(): external_function_parameters {
         return new external_function_parameters([
             'id' => new external_value(PARAM_INT, 'The column id', VALUE_REQUIRED),
-            'name' => new external_value(PARAM_TEXT, 'The column name', VALUE_REQUIRED)
+            'name' => new external_value(PARAM_RAW, 'The column name', VALUE_REQUIRED)
         ]);
     }
 
