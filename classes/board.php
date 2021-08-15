@@ -305,6 +305,7 @@ class board {
             if ($column->locked === null) {
                 $column->locked = false;
             }
+            $columns[$columnid]->name = format_string($column->name, true, ["context" => self::context_for_board($boardid), "escape" => false]);
             if ($hideheaders) {
                 $column->name = ++$columnindex;
             }
