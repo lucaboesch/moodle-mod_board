@@ -194,6 +194,7 @@ Boards may be used
 * As crowdsourcing content.
 * As discussion whiteboards.
 * For teacher feedback on sessions.';
+$string['modulename_summary'] = 'Enables students to share ideas and content anonymously through interactive posts, including text, images, links, and videos.';
 $string['modulenameplural'] = 'Boards';
 $string['move_column_to_aftercolumn'] = 'Move column after column {$a}';
 $string['move_column_to_firstplace'] = 'Move column to first place';
